@@ -1,0 +1,80 @@
+
+.div-login {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  background: linear-gradient(to right, #614385, #516395);
+  border-radius: 20px;
+  color: #dbdbdb;
+  top: 23%;
+  left: 37%;
+  box-shadow: 0px 3px 15px #614385;
+}
+
+.sbs{
+  display: flex;
+  justify-content: center;
+  top: 25%;
+  position: relative;
+  /* align-items: center; */
+  margin-left: -20px !important;
+}
+
+.email {
+  padding-bottom: 15px;
+  width: 200px;
+  align-items: center;
+  border-radius: 5px;
+}
+.password {
+  padding-bottom: 25px;
+  width: 200px;
+}
+
+.loginButton {
+  position: relative;
+  background-color: #2481ee;
+  font-family: Arial;
+  font-weight: 600;
+  border: none;
+  color: #fff;
+  border-radius: 70px;
+  width: 100px;
+  height: 40px;
+  left: 28%;
+}
+
+.loginButton:hover{
+  transform: scale(1.2);
+  transition: all .3s ease-in-out;
+}
+
+::placeholder {
+  color: rgba(0, 0, 0, 0.61);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  height: fit-content;
+}
+input {
+  width: 110%;
+  border: 1px solid #dbdbdb;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  box-shadow: none;
+  font-family: "Open Sans Condensed", sans-serif;
+  height: 30px;
+  border: none;
+}
+
+input:active, input:focus{
+  outline: none;
+}
+.email {
+  margin-top: 15px;
+}
+
+/* body {
+  background-image: url("../assets/backgroundi-JS.jpg");
+  background-size:cover;
+  font-family: sans-serif;
+  background-repeat: no-repeat;
+} */

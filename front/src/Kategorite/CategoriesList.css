@@ -1,0 +1,27 @@
+.bttn1{
+    margin-left:40% !important;
+    
+
+}
+.firstDatePicker{
+    display: flex;
+    margin-left: 20%;
+}
+.secondDatePicker{
+    margin-top: 5px;
+    margin-left: 20%;
+    display: flex;
+}
+.filtroButton{
+    margin-top: 5px;
+    margin-left: 20%;
+    display: flex;
+}
+
+.dateTitle{
+    margin-left: 20%;
+    font-weight: bold;
+}
+.nga{
+    margin-right: 25px;
+}

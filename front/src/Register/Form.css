@@ -1,0 +1,165 @@
+
+  
+
+  /*Ndryshimi i vendit*/
+  
+ /* .form-content-left {
+    background: linear-gradient(
+      90deg,
+      rgb(39, 176, 255) 0%,
+      rgb(0, 232, 236) 100%
+    );
+    border-radius: 10px 0 0 10px;
+    position: relative;
+  }
+  Background i Login*/
+
+  
+  .form-success {
+    text-align: center;
+    font-size: 16px;
+    margin-top: 80px;
+    color: green;
+  }
+  /*Pasi te krijosh llogarin*/
+  
+  .form-content-right {
+    position: absolute;
+    width: fit-content;
+    min-width: 400px;
+  
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    color: #dbdbdb;
+    top: 50%;
+    left: 45%;
+    margin: -180px 0 0 -220px;
+  }
+  .form-content-success {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.418);
+    border-radius: 10px;
+    color: #dbdbdb;
+    text-align: center;
+    
+  }
+  /*Backgroundi i Register*/
+  .form-success{
+    text-align: center;
+    width: 300px; 
+    font-size: 16px;
+    color: rgb(230, 216, 216);
+  }
+  .form {
+    padding-top: 20px;
+    position: relative;
+    border-radius: 15px;
+   
+    margin-left: 30px;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  /*Register in Center*/
+  
+  .form h1 {
+    color:white;
+    position:relative;
+    font-size: 13px;
+   
+    font-family:Arial,;
+  }
+  /*Filloni.. change*/
+  
+  .form-inputs {
+    margin-bottom: 0.5rem;
+    width: 80%;
+    border-radius: 15px;
+  }
+  /*Box Size*/
+  
+  .form-inputs p {
+    font-size: 0.6rem;
+    margin-top: 0.1rem;
+    color: #f00e0e;
+  }
+  /*Error me tkuqe*/
+
+  .form-label {
+   
+    
+    display: inline-block;
+    font-family: Arial;
+    font-size: 0.8rem;
+    margin-bottom: 3px;
+    color: white;
+
+  }
+  /*Username email etc*/
+  
+  .form-input {
+
+    display: block;
+    border: 1px solid #dbdbdb;
+    background-color: rgba(255,255,255, 0.6);
+    border-radius: 15px;
+    box-shadow: none;
+    font-family: Arial !important;
+    width: 90%;
+    height: 2em;
+    
+    
+  }
+  /*BOX*/
+  
+  .form-input::placeholder {
+    color: #74747469;
+    font-weight: lighter;
+    padding-left: 5px;
+    font-size: 12px;
+  }
+  /*boxname change*/
+  
+  .form-input-btn {
+    width: 40%;
+    margin: 5px 0;
+    background-color:#2196F3;
+    font-family: 'Open Sans Condensed', sans-serif;
+    padding: 5px;
+    font-weight: 600;
+    border: none;
+    color: white;
+    border-radius: 100px;
+    margin-right:20px;
+  }
+  /*Kyquni*/
+  .form-input-btn:hover {
+    cursor: pointer;
+    background: linear-gradient(
+      90deg,
+      rgb(13, 173, 21) 0%,
+     
+    );
+    transition: all 0.4s ease-out;
+  }
+  
+  .form-input-login {
+    font-size: 0.8rem;
+    margin-top: 10px;
+    color: #fff;
+    width: 60%;
+    text-align: center;
+    margin-right:25px;
+  }
+  /*posedoni*/
+  
+  .form-input-login a {
+    text-decoration: none;
+    color: #27cdff;
+    font-weight: 600;
+    
+  }
+  /*Ketu*/

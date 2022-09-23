@@ -1,0 +1,19 @@
+.forma1{
+    width:30%;
+    height:40%;
+    margin-left:30%;
+   
+    color:black;
+    font-style: bold;
+    
+
+}
+.form-label {
+    color:white; 
+    font-family:Arial;
+    font-weight: bold;
+    
+    }
+.form-control{
+    border-radius: 50px !important;
+}    

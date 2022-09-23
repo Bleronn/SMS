@@ -1,0 +1,42 @@
+.box1{
+    height:200px;
+    width:200px;
+    background-color: #fffafa;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, .2);
+}
+
+.dashboardBoxes{
+    margin-top: 3%;
+    margin-left: 10%;
+}
+.secondRowDashboard{
+    margin-top: 3%;
+}
+
+.icons{
+    color:#0b4d99;
+    position: relative;
+    left:33%;
+    top:20%;
+    font-size:70px;
+}
+
+.boxText{
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ float: center;
+ color:#0b4d99;
+ 
+ text-align: center;
+
+ 
+}
+.boxNr{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    margin-top: 40px;
+    float: center;
+    font-size:x-large;
+    color :#0b4d99;
+
+}
