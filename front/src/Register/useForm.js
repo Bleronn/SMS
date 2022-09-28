@@ -32,7 +32,7 @@ const useForm = (callback, validate) => {
         password: values.password,
         confirmPassword: values.password,
       });
-      history.push("/dashboard");
+      history.push("/");
     } catch (err) {
       alert("Invalid register info");
     }

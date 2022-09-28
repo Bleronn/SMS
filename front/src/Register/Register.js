@@ -17,7 +17,7 @@ const Register = () => {
   };
 
   return (
-    <div className="div-login">
+    <div className="div-register">
       <div>{/* <img src={Logo} alt="Logo" />; */}</div>
       <div>
         <form onSubmit={handleSubmit}>
@@ -34,7 +34,7 @@ const Register = () => {
               name="email"
               placeholder="Type your email..."
               required
-              value={}
+              // value={}
               onChange={handleChange}
             />
           </div>
@@ -44,7 +44,7 @@ const Register = () => {
               name="pwd"
               placeholder="Type your password..."
               required
-              value={}
+              // value={}
               onChange={handleChange}
             />
           </div>
@@ -54,7 +54,7 @@ const Register = () => {
               name="email"
               placeholder="Type your email..."
               required
-              value={}
+              // value={}
               onChange={handleChange}
             />
           </div>
@@ -64,7 +64,7 @@ const Register = () => {
               name="pwd"
               placeholder="Type your password..."
               required
-              value={}
+              // value={}
               onChange={handleChange}
             />
           </div>
