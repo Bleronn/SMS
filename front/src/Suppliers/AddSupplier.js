@@ -16,11 +16,17 @@ function AddSupplier() {
 
   const history = useHistory();
 
+  const config = {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("sms_token")}`
+    }
+  }
+
   const addSupplier = async () => {
     try {
       const response = await axios.post("http://localhost:63717/api/supplier", {
         ...supplier,
-      });
+      }, config);
 
       history.push("/furnitoret");
     } catch (err) {

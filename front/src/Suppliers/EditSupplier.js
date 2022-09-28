@@ -21,15 +21,19 @@ function EditSupplier() {
   const params = useParams();
   const history = useHistory();
 
-  useEffect(async () => {
-    try {
-      const response = await axios.get(
-        `http://localhost:63717/api/supplier/${params.id}`
-      );
-      setSupplier(response.data);
-    } catch (err) {
-      history.push("/dashboard");
+  const config = {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("sms_token")}`
     }
+  }
+
+  useEffect(async () => {
+     axios.get(
+        `http://localhost:63717/api/supplier/${params.id}`, config)
+      .then((response) =>{
+        setSupplier(response.data);
+      })
+    
   }, []);
 
   const handleChange = (e) => {
@@ -44,7 +48,7 @@ function EditSupplier() {
         {
           ...supplier,
         }
-      );
+      , config);
       history.push("/furnitoret");
     } catch (err) {
       alert("Something went wrong while trying to edit this supplier");
