@@ -4,25 +4,18 @@ import { Link } from "react-router-dom";
 import { Table, Button, Modal } from "react-bootstrap";
 import axios from "axios";
 import "./AddSale.css";
-import DatePicker from "react-date-picker";
-import Calendar from "react-calendar";
-import EditSale from "../Sales/EditSale"
+
 
 function SalesList() {
   const [sales, setSales] = useState([]);
   const [deleteModal, setDeleteModal] = useState(false);
-  const [saleToDeleteId, setSaleToDeleteId] = useState(null);
 
   const handleClose = () => setDeleteModal(false);
   const handleShow = () => setDeleteModal(true);
 
   useEffect(() => {
     axios
-      .get("http://localhost:63717/api/category/", {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("sms_token")}`,
-        },
-      })
+      .get("http://localhost:63717/api/sale/", config)
       .then((response) => {
         setSales(response.data);
       });
@@ -38,25 +31,14 @@ function SalesList() {
   const deleteSale = (id) => {
     if (window.confirm("Are you sure?")) {
       axios
-        .delete("http://localhost:63717/api/category/" + id, config)
+        .delete("http://localhost:63717/api/sale/" + id, config)
         .then(() => window.location.reload());
     }
   };
 
-  const handleDeleteDialog = (id) => {
-    handleShow();
-    setSaleToDeleteId(id);
-  };
-
-
   return (
     <>
       <Navbar />
-      <Link to="/sales/regjistro">
-        <Button class=" btn btn-primary " type="submit">
-          Shto Shitje
-        </Button>
-      </Link>
       {sales && (
         <div style={{ padding: "50px" }}>
           <Table striped bordered hover>
@@ -67,6 +49,13 @@ function SalesList() {
                 <th>Sasia</th>
                 <th>Qmimi Njesi</th>
                 <th>Zbritja</th>
+                <th>
+                <Link to="/sale/regjistro">
+                  <Button class=" btn btn-primary " type="submit">
+                    Shto Shitje
+                  </Button>
+                </Link>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -79,7 +68,7 @@ function SalesList() {
                   <td>{sale.discount}</td>
                   <td>
                     <div style={{ display: "flex" }}>
-                      <Link to={`/sales/ndrysho/${sale.id}`}>
+                      <Link to={`/sale/ndrysho/${sale.id}`}>
                         <Button
                           style={{ marginRight: "5px" }}
                           variant="primary"
@@ -88,7 +77,7 @@ function SalesList() {
                         </Button>
                       </Link>
                       <Button
-                        onClick={() => handleDeleteDialog(sale.id)}
+                       onClick={() => deleteSale(sale.id)}
                         variant="danger"
                       >
                         Fshij
