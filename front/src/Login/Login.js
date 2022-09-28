@@ -55,9 +55,9 @@ const Login = (props) => {
             />
           </div>
           <div class="buttons">
-            {/* <Link to="/register">
+            <Link to="/register">
               <button class="registerButton"> Regjistrohu </button>
-            </Link> */}
+            </Link>
             <button class="loginButton" onSubmit={handleSubmit}>
               Kyquni
             </button>

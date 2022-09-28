@@ -7,7 +7,7 @@
   border-radius: 20px;
   color: #dbdbdb;
   top: 23%;
-  left: 37%;
+  left: 40%;
   box-shadow: 0px 3px 15px #614385;
 }
 
@@ -41,7 +41,7 @@
   border-radius: 70px;
   width: 100px;
   height: 40px;
-  left: 28%;
+  left: 10%;
 }
 
 .loginButton:hover{
@@ -72,9 +72,22 @@ input:active, input:focus{
   margin-top: 15px;
 }
 
-/* body {
-  background-image: url("../assets/backgroundi-JS.jpg");
-  background-size:cover;
-  font-family: sans-serif;
-  background-repeat: no-repeat;
-} */
+.logout{
+  color: #fff !important;
+  margin-right: 16px !important;
+  font-size: 1.2rem !important;
+  cursor: pointer !important;
+}
+
+.logoutgroup{
+  width: 193px;
+  margin-left: 12px;
+  padding-left: 15px;
+  height: 35px !important;
+
+}
+
+.logoutgroup:hover{
+  background-color: #2481ee;
+  border-radius: 4px;
+}
