@@ -1,9 +1,9 @@
 import Navbar from "../Navbar/Navbar";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form } from "react-bootstrap";
-import "../Sales/AddSale.css";
+import "./AddSale.css";
 import axios from "axios";
 
 function AddSale() {
@@ -14,18 +14,33 @@ function AddSale() {
     email: "",
   });
 
+  // const [sale, setSale] = useState([]);
+
+  const config = {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("sms_token")}`
+    }
+  }
+
+  useEffect(() => {
+      axios.get("http://localhost:63717/api/Sale/", config)
+      .then((response) => {
+        setSale(response.data);
+
+      })
+  }, []);
+
+  console.log(sale)
+
   const history = useHistory();
 
-  const addSale = async () => {
-    try {
-      const response = await axios.post("http://localhost:63717/api/sale", {
+  const addSale = () => {
+     axios.post("http://localhost:63717/api/Sale/", {
         ...sale,
-      });
+      }, config);
 
-      history.push("/shitjet");
-    } catch (err) {
-      alert("Something went wrong while trying to add this sale");
-    }
+      history.push("/sales");
+    
   };
 
   const handleChange = (e) => {
@@ -42,19 +57,19 @@ function AddSale() {
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>ID e fatures</Form.Label>
               <Form.Control
-                value={sale.InvoiceId}
+                value={sale.invoiceId}
                 onChange={handleChange}
-                name="name"
+                name="invoiceId"
                 type="text"
                 placeholder="ID e fatures"
               />
             </Form.Group>
-            <Form.Group controlId="exampleForm.ControlInput1">
+            <Form.Group controlId="exampleForm.ControlSelect1">
               <Form.Label>ID e perdoruesit</Form.Label>
               <Form.Control
-                value={sale.UserId}
+                value={sale.userId}
                 onChange={handleChange}
-                name="contact"
+                name="userId"
                 type="text"
                 placeholder="ID e Perdoruesit"
               />
@@ -62,30 +77,30 @@ function AddSale() {
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Sasia</Form.Label>
               <Form.Control
-                value={sale.Quantity}
+                value={sale.quantity}
                 onChange={handleChange}
-                name="address"
-                type="text"
+                name="quantity"
+                type="number"
                 placeholder="Sasia"
               />
             </Form.Group>
-            <Form.Group controlId="exampleForm.ControlInput1">
+            <Form.Group controlId="exampleForm.ControlSelect1">
               <Form.Label>Qmimi per Njesi</Form.Label>
               <Form.Control
-                value={sale.UnitPrice}
+                value={sale.unitPrice}
                 onChange={handleChange}
-                name="email"
-                type="text"
+                name="unitPrice"
+                type="number"
                 placeholder="Qmimi per Njesi"
               />
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Zbritja</Form.Label>
               <Form.Control
-                value={sale.Discount}
+                value={sale.discount}
                 onChange={handleChange}
-                name="email"
-                type="text"
+                name="discount"
+                type="number"
                 placeholder="Zbritja"
               />
             </Form.Group>
