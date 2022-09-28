@@ -32,12 +32,12 @@ function EditSale(props) {
 
   useEffect(async () => {
     const response = await axios.get(
-      `http://localhost:63717/api/sale/${ajdi}`, config
+      `http://localhost:63717/api/sale/${params.id}`, config
     );
     setSale(response.data);
 }, []);
 
-console.log(sale.name);
+console.log(sale.userId);
 
 const config = {
   headers: {
@@ -53,7 +53,7 @@ const handleChange = (e) => {
 const editSale = async () => {
   try {
     const response = await axios.put(
-      `http://localhost:63717/api/sale/${ajdi}`,
+      `http://localhost:63717/api/sale/${params.id}`,
       {
         ...sale,
       }, config
@@ -73,9 +73,9 @@ return (
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>ID e fatures</Form.Label>
               <Form.Control
-                value={sale.InvoiceId}
+                value={sale.invoiceId}
                 onChange={handleChange}
-                name="name"
+                name="invoiceId"
                 type="text"
                 placeholder="ID e fatures"
               />
@@ -83,9 +83,9 @@ return (
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>ID e perdoruesit</Form.Label>
               <Form.Control
-                value={sale.UserId}
+                value={sale.userId}
                 onChange={handleChange}
-                name="contact"
+                name="userId"
                 type="text"
                 placeholder="ID e Perdoruesit"
               />
@@ -93,30 +93,30 @@ return (
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Sasia</Form.Label>
               <Form.Control
-                value={sale.Quantity}
+                value={sale.quantity}
                 onChange={handleChange}
-                name="address"
-                type="text"
+                name="quantity"
+                type="number"
                 placeholder="Sasia"
               />
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Qmimi per Njesi</Form.Label>
               <Form.Control
-                value={sale.UnitPrice}
+                value={sale.unitPrice}
                 onChange={handleChange}
-                name="email"
-                type="text"
+                name="unitPrice"
+                type="number"
                 placeholder="Qmimi per Njesi"
               />
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlInput1">
               <Form.Label>Zbritja</Form.Label>
               <Form.Control
-                value={sale.Discount}
+                value={sale.discount}
                 onChange={handleChange}
-                name="email"
-                type="text"
+                name="discount"
+                type="number"
                 placeholder="Zbritja"
               />
             </Form.Group>
