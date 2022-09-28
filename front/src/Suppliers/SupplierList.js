@@ -8,39 +8,34 @@ import "../Suppliers/SupplierList.css";
 function SuppliersList() {
   const [suppliers, setSuppliers] = useState([]);
   const [deleteModal, setDeleteModal] = useState(false);
-  const [supplierToDeleteId, setSupplierToDeleteId] = useState(null);
 
   const handleClose = () => setDeleteModal(false);
   const handleShow = () => setDeleteModal(true);
 
-  useEffect(async () => {
-    const getSuppliers = async () => {
-      const response = await axios.get("http://localhost:63717/api/supplier");
-      setSuppliers(response.data);
-    };
+  const config = {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("sms_token")}`
+    }
+  }
 
-    await getSuppliers();
+  useEffect(async () => {
+    axios.get("http://localhost:63717/api/Supplier/", config)
+    .then((response) => {
+      setSuppliers(response.data);
+    })
   }, []);
 
-  const deleteSupplier = async () => {
-    if (supplierToDeleteId) {
-      try {
-        await axios.delete(
-          `http://localhost:63717/api/supplier/${supplierToDeleteId}`
-        );
+  console.log(suppliers);
 
-        setSuppliers(suppliers.filter((p) => p.id !== supplierToDeleteId));
-        handleClose();
-      } catch (err) {
-        alert("Something went wrong while trying to delete this supplier");
-      }
+  const deleteSupplier = (id) => {
+    if (window.confirm("Are you sure?")) {
+      axios
+        .delete("http://localhost:63717/api/supplier/" + id, config)
+        .then(() => window.location.reload());
     }
   };
 
-  const handleDeleteDialog = (id) => {
-    handleShow();
-    setSupplierToDeleteId(id);
-  };
+ 
 
   return (
     <>
@@ -55,7 +50,7 @@ function SuppliersList() {
                 <th>Address</th>
                 <th>Email</th>
                 <th> <div class="bttn1">
-                    <Link to="/furnitoret/regjistro">
+                    <Link to="/furnitore/regjistro">
                       <Button class=" btn btn-primary " type="submit">
                         Shto Furnizuesin
                       </Button>
@@ -72,7 +67,7 @@ function SuppliersList() {
                   <td>{supplier.email}</td>
                   <td>
                     <div style={{ display: "flex" }}>
-                      <Link to={`/furnitoret/ndrysho/${supplier.id}`}>
+                      <Link to={`/furnitore/ndrysho/${supplier.id}`}>
                         <Button
                           style={{ marginRight: "5px" }}
                           variant="primary"
@@ -81,7 +76,7 @@ function SuppliersList() {
                         </Button>
                       </Link>
                       <Button
-                        onClick={() => handleDeleteDialog(supplier.id)}
+                        onClick={() => deleteSupplier(supplier.id)}
                         variant="danger"
                       >
                         Fshij
