@@ -15,6 +15,25 @@
   Background i Login*/
 
   
+
+  .registerButton{
+    position: relative;
+    background-color: #69ea58;
+    font-family: Arial;
+    font-weight: 600;
+    border: none;
+    color: #fff;
+    border-radius: 70px;
+    width: 100px;
+    height: 40px;
+  }
+
+  .registerButton:hover{
+    transform: translateY(-5px);
+    transition: all .2s ease-in-out;
+  }
+
+  
   .form-success {
     text-align: center;
     font-size: 16px;
@@ -27,12 +46,11 @@
     position: absolute;
     width: fit-content;
     min-width: 400px;
-  
-    background: rgba(0, 0, 0, 0.7);
+    background: linear-gradient(to right, #614385, #516395);
     border-radius: 20px;
     color: #dbdbdb;
-    top: 50%;
-    left: 45%;
+    top: 42%;
+    left: 50%;
     margin: -180px 0 0 -220px;
   }
   .form-content-success {
@@ -54,7 +72,6 @@
     padding-top: 20px;
     position: relative;
     border-radius: 15px;
-   
     margin-left: 30px;
     width: 90%;
     height: 90%;
@@ -126,7 +143,7 @@
   .form-input-btn {
     width: 40%;
     margin: 5px 0;
-    background-color:#2196F3;
+    background-color:#69ea58;
     font-family: 'Open Sans Condensed', sans-serif;
     padding: 5px;
     font-weight: 600;

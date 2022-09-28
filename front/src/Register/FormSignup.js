@@ -84,7 +84,7 @@ const FormSignup = ({ submitForm }) => {
         </button>
         <span className="form-input-login">
           Posedoni një llogari?{" "}
-          <Link to="/login">
+          <Link to="/">
             <p>Kyquni këtu</p>
           </Link>
         </span>
